@@ -6,7 +6,6 @@ const _ = require('lodash');
 const date = require(__dirname + '/date.js');
 
 const app = express();
-const port = 3000;
 
 mongoose.connect('mongodb+srv://admin-bilel:firstmongo1384@cluster0.v6ya627.mongodb.net/todolistDB');
 // 'mongodb://localhost:27017/todolistDB'  this to connect to the database locally
@@ -123,6 +122,11 @@ app.post('/delete', function(req, res) {
     })
   }
 })
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 app.listen(port, function() {
   console.log('the server running on port ' + port);
