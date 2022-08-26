@@ -1,0 +1,55 @@
+<%# layouts EJS %>
+<%- include ('header') -%>
+
+  <div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+  </div>
+
+  <div class="box">
+
+    <% todoList.forEach(function(todoItem) { %>
+    <form action="/delete" method="post">
+      <div class="item">
+        <input type="checkbox" name="todelete" value="<%= todoItem._id %>,<%= listTitle %>"> <!-- onchange="this.form.submit();"-->
+        <p> <%= todoItem.name %> </p>
+      </div>
+      <!-- // another way to passing data to server from form submission -->
+      <!-- <input type="hidden" name="deleteFrom" value="<%= listTitle %>"> -->
+    </form>
+
+    <% }); %>
+    <form action="/" class="item" method="POST">
+      <input type="text" name="newItem" autocomplete="off" placeholder="New Item" required>
+      <button class="submit-btn" type="submit" name="list" value=<%= listTitle %>>+</button>
+    </form>
+  </div>
+
+
+  <!-- Button trigger modal -->
+  <div class="container">
+    <div class="col-md-12 text-center">
+      <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#todoModal">
+        Add new todo list
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="todoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border: 3px solid #A683E3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new todo list</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color:#A683E3;"></button>
+        </div>
+        <div class="modal-body">
+          To add your custom to-do list name, you need to add a route of your own. <br><br>
+          Exp: <br>
+          If you want a custom list of todo work you need to add '/work' to the end of the server address.
+          <img src="images/help.png" alt="" width="100%" height="50 rem">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include ('footer') -%>
