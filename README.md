@@ -18,10 +18,9 @@ Project is created with:
 
 * [![Express.js][Express.com]][Express-url]
 * [![MongoDB][Mongo.com]][Mongo-url]
-* [![JavaScript][JavaScript.com]][]
-* [![HTML5][HTML5.com]][]
-* [![CSS3][CSS3.com]][]
-* [![Laravel][Laravel.com]][Laravel-url]
+* [![JavaScript][JavaScript.com]]
+* [![HTML5][HTML5.com]]
+* [![CSS3][CSS3.com]]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
