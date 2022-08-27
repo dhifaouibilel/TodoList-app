@@ -7,7 +7,7 @@ const date = require(__dirname + '/date.js');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://admin-bilel:firstmongo1384@cluster0.v6ya627.mongodb.net/todolistDB');
+mongoose.connect('mongodb+srv://<username>:<password>@cluster0.v6ya627.mongodb.net/todolistDB');
 // 'mongodb://localhost:27017/todolistDB'  this to connect to the database locally
 console.log('Connection started to mongodb on port 27017');
 
